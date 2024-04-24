@@ -2,4 +2,5 @@
     "liveServer.settings.root": "/",
     "liveServer.settings.CustomBrowser": "chrome",
     "liveServer.settings.file": "index.html",
+    "editor.formatOnSave": true
 }
