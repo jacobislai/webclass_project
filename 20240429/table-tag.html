@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Tag</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            height: 100%;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: 700;
+            margin: 20px auto;
+            text-align: center;
+
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .table th {
+            background: #0e4d2f;
+            color: #fff;
+        }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            border: 1px solid #ffffff;
+            transition: 0.4s;
+        }
+
+        .table tbody tr:nth-child(even) td {
+            background: #dedede;
+        }
+
+        .table tbody tr:hover td {
+            background: rgb(43, 202, 128);
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">學生成績表</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>分數</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>阿明</td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <td>阿志</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>阿嬌</td>
+                    <td>98</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
