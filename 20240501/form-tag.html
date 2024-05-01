@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form-tag</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <div>
+            <label for="login-account">帳號</label>
+            <input type="text" name="account" value="" placeholder="輸入帳號" id="login-account" />
+        </div>
+        <div>
+            <label for="login-password">密碼</label>
+            <input type="password" name="password" value="" placeholder="輸入密碼" id="login-password" />
+        </div>
+        <div>
+            <button type="submit">Send</button>
+        </div>
+        <div>
+            <button type="button" onclick="sayHi()">我不會發送</button>
+        </div>
+    </form>
+
+    <script>
+        const sayHi = () => {
+            alert('Hi, 我不會發送，但是我會打鬧!');
+        }
+    </script>
+</body>
+
+</html>
