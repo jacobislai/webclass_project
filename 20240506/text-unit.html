@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字階層關係</title>
+
+    <style>
+        html,
+        body {
+            font-size: 20px;
+            scroll-behavior: smooth;
+        }
+
+        #master {
+            font-size: 20px;
+        }
+
+        #slave {
+            font-size: 2em;
+        }
+
+        #three {
+            font-size: 20%;
+        }
+
+        #rem-master {
+            font-size: 80px;
+        }
+
+        #rem-slave {
+            font-size: 2em;
+        }
+
+        #rem-three {
+            font-size: 2em;
+        }
+
+        #rem-2master {
+            font-size: 2em;
+        }
+
+        #rem-2slave {
+            font-size: 2em;
+        }
+
+        #rem-2three {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="master">
+        <span>Master</span>
+        <div id="slave">
+            <span>Slave</span>
+            <div id="three">
+                <span>Three</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="rem-master">
+        <span>rem Master</span>
+        <div id="rem-slave">
+            <span>rem Slave</span>
+            <div id="rem-three">
+                <span>rem Three</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="rem-2master">
+        <span>rem 2Master</span>
+        <div id="rem-2slave">
+            <span>rem 2Slave</span>
+            <div id="rem-2three">
+                <span>rem 2Three</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
