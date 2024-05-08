@@ -1,6 +1,6 @@
 .one-page {
     height: 80vh;
-    background: red;
+    background: rgb(28, 66, 41);
 }
 
 
@@ -23,8 +23,8 @@
 .align {
     width: 200px;
     height: 200px;
-    background: yellow;
-    color: #ff0505;
+    background: rgb(17, 88, 88);
+    color: #f74444;
     text-align: center;
     line-height: 200px;
     /*用行高置中，只能有一行文字，多了就破給你看*/
