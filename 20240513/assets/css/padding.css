@@ -1,0 +1,35 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #dedede;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+}
+
+.p-full {
+    padding: 20px;
+}
+
+.p-two {
+    padding: 15px 10px;
+}
+
+.p-top {
+    padding-top: 30px;
+}
+
+.p-left {
+    padding-left: 30px;
+}
+
+.p-bottom {
+    padding-bottom: 30px;
+}
+
+.p-right {
+    padding-right: 30px;
+}
+
+.p-rand {
+    padding: 30px 30px 30px 30px;
+}
