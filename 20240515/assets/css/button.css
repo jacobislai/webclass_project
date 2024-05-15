@@ -12,12 +12,12 @@
 }
 
 .btn:hover {
-    background-color: #3b0534;
+    background-color: #7c7c7c;
 }
 
 .btn.primary {
     color: #dedede;
-    background-color: aquamarine;
+    background-color: rgb(11, 141, 98);
 }
 
 .btn.primary:hover {
@@ -44,9 +44,9 @@
 
 .btn.dark {
     color: #dedede;
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(80, 9, 76);
 }
 
 .btn.dark:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(43, 1, 37);
 }
