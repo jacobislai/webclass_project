@@ -29,6 +29,7 @@
     display: none;
 }
 
+/* 當二階選單，因著hover被蓋住時，讓裡面的ul以及下面的li，都能顯示出來 */
 .menu li:hover>ul {
     display: block;
 }
