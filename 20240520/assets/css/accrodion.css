@@ -1,0 +1,52 @@
+.accrodion-wrap {
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #dedede;
+}
+
+.accrodion-wrap .accrodion-item {
+    margin-bottom: 5px;
+}
+
+.accrodion-wrap .accrodion-header {
+    max-width: 100%;
+    max-height: 50px;
+    background: rgb(19, 19, 156);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    user-select: none;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.accrodion-wrap .accrodion-body {
+    padding: 10px;
+    border: 1px solid rgb(19, 19, 156);
+    color: rgb(19, 19, 156);
+    font-size: 20px;
+    display: none;
+}
+
+.accrodion-header .accrodion-to-close {
+    display: none;
+}
+
+.accrodion-wrap .accrodion-switch:checked~.accrodion-header .accrodion-to-open {
+    display: none;
+}
+
+.accrodion-wrap .accrodion-switch:checked~.accrodion-header .accrodion-to-close {
+    display: block;
+}
+
+.accrodion-wrap .accrodion-switch:checked~.accrodion-body {
+    display: block;
+}
+
+.accrodion-wrap .accrodion-switch {
+    display: none;
+}
