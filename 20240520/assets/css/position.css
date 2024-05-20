@@ -1,0 +1,23 @@
+.wrap {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #dedede;
+}
+
+.wrap .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.relative {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.absolute {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
