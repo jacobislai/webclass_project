@@ -283,7 +283,6 @@ body {
 }
 
 .flow {
-    border: 1px solid #000;
     padding: 30px 0;
     position: relative;
 }
@@ -327,5 +326,16 @@ body {
     background-color: #50a190;
     color: #fff;
     border-radius: 8px;
-    min-width: 300px;
+    min-width: 100px;
+}
+
+.flow-item:nth-child(even) .flow-text {
+    right: calc(50% + 50px);
+    left: unset;
+    background-color: #2424b6;
+    text-align: right;
+}
+
+.flow-item:nth-child(even) .flow-circle {
+    background-color: #2424b6;
 }
