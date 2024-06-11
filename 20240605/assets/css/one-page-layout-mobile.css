@@ -1,0 +1,25 @@
+.mobile-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.mobile-menu-wrap {
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.mobile-menu-wrap>span {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 100px;
+    transition: 0.3s;
+}
