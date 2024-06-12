@@ -82,25 +82,44 @@ body {
         flex-direction: column;
     }
 
+    .menu>ul {
+        gap: 10px;
+    }
+
+    .menu>ul>li {
+        border-bottom: 2px solid #dedede;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .menu>ul>li:last-child {
+        border: 0;
+        padding-bottom: 0;
+    }
+
     #page-1 .page-content {
         grid-template-columns: 1fr;
     }
 
     #page-1 .page-content>div:first-child::after {
         right: unset;
-        left: 0;
+        left: 5%;
         top: unset;
         bottom: 0;
         height: 0;
-        width: 100%;
+        width: 90%;
         border-left: 0;
-        border-bottom: 4px dashed #fff;
+        border-bottom: 3px dashed #fff;
     }
 
     .flow-item:nth-child(even) .flow-text {
-        left: calc(50% + 50px);
+        left: 50px;
         right: unset;
         text-align: left;
+    }
+
+    .flow-item .flow-text {
+        left: 50px;
     }
 
     .flow::before {
