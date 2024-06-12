@@ -81,4 +81,38 @@ body {
         width: 100%;
         flex-direction: column;
     }
+
+    #page-1 .page-content {
+        grid-template-columns: 1fr;
+    }
+
+    #page-1 .page-content>div:first-child::after {
+        right: unset;
+        left: 0;
+        top: unset;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        border-left: 0;
+        border-bottom: 4px dashed #fff;
+    }
+
+    .flow-item:nth-child(even) .flow-text {
+        left: calc(50% + 50px);
+        right: unset;
+        text-align: left;
+    }
+
+    .flow::before {
+        left: 11px;
+    }
+
+    .flow-item {
+        justify-content: flex-start;
+    }
+
+    .flow-wrap {
+        display: grid;
+        gap: 40px;
+    }
 }
