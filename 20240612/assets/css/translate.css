@@ -10,6 +10,7 @@
     height: 100%;
     background-color: red;
     transform: translate(10px, 10px);
+    opacity: 0.8;
 }
 
 .r {
@@ -19,4 +20,5 @@
     position: relative;
     top: 10px;
     left: 10px;
+    opacity: 0.8;
 }
