@@ -46,6 +46,7 @@
 .wrap .cube.active {
     animation: move;
     animation-duration: 3s;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes move {
