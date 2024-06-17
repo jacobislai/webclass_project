@@ -38,7 +38,7 @@
     position: absolute;
     width: var(--cube-size);
     height: var(--cube-size);
-    border-radius: 7px;
+    border-radius: 6px;
     background: rgb(236, 236, 79);
     left: 0;
 }
@@ -47,6 +47,15 @@
     animation: move;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
+    /* animation-iteration-count: infinite; */
+    /* animation-fill-mode: none; */
+    /* animation-fill-mode: forwards; */
+    /* animation-fill-mode: backwards; */
+    animation-fill-mode: both;
+    /* none 與 both 常用 */
+    /* left: calc(100% - var(--cube-size)); */
+    /* animation-delay: 1500ms; */
+    /* 1.5s */
 }
 
 @keyframes move {
