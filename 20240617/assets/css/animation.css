@@ -47,7 +47,7 @@
     animation: move;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
-    /* animation-iteration-count: infinite; */
+    animation-iteration-count: infinite;
     /* animation-fill-mode: none; */
     /* animation-fill-mode: forwards; */
     /* animation-fill-mode: backwards; */
@@ -56,6 +56,10 @@
     /* left: calc(100% - var(--cube-size)); */
     /* animation-delay: 1500ms; */
     /* 1.5s */
+    animation-direction: normal;
+    animation-direction: reverse;
+    animation-direction: alternate;
+    /* animation-direction: alternate-reverse; */
 }
 
 @keyframes move {
