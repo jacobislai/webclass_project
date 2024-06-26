@@ -13,8 +13,8 @@ const getNum = () => {
     response.classList.add('d-none');
     response.classList.remove('d-block');
 
-    let n1 = +num1Input.value;
-    let n2 = +num2Input.value;
+    let n1 = num1Input.value;
+    let n2 = num2Input.value;
 
     // equal ==
     if (n1 == '') {
@@ -29,7 +29,14 @@ const getNum = () => {
         return false;
     }
 
-    return [n1, n2]
+    return [+n1, +n2]
+}
+
+const done = () => {
+    response.classList.add('d-block');
+    response.classList.remove('d-none');
+    num1Input.value = '';
+    num2Input.value = '';
 }
 
 const addCalc = () => {
@@ -40,9 +47,66 @@ const addCalc = () => {
 
     let result = num[0] + num[1];
     response.innerHTML = `${num[0]} + ${num[1]} = ${result}`;
-    response.classList.add('d-block');
-    response.classList.remove('d-none');
+    done();
+}
+
+const substructCalc = () => {
+    let num = getNum();
+    if (!num) {
+        return false;
+    }
+
+    let result = num[0] - num[1];
+    response.innerHTML = `${num[0]} - ${num[1]} = ${result}`;
+    done();
+}
+
+const multiplyCalc = () => {
+    let num = getNum();
+    if (!num) {
+        return false;
+    }
+
+    let result = num[0] * num[1];
+    response.innerHTML = `${num[0]} * ${num[1]} = ${result}`;
+    done();
+}
+
+const dividedCalc = () => {
+    let num = getNum();
+    if (!num) {
+        return false;
+    }
+
+    if (num[1] == 0) {
+        alert('分母不可為0');
+        return false;
+    }
+
+    let result = num[0] / num[1];
+    response.innerHTML = `${num[0]} / ${num[1]} = ${result}`;
+    done();
+}
+
+const remainderCalc = () => {
+    let num = getNum();
+    if (!num) {
+        return false;
+    }
+
+    if (num[1] == 0) {
+        alert('分母不可為0');
+        return false;
+    }
+
+    let result = num[0] % num[1];
+    response.innerHTML = `${num[0]} % ${num[1]} = ${result}`;
+    done();
 }
 
 
 calc1Btn.addEventListener('click', addCalc);
+calc2Btn.addEventListener('click', substructCalc);
+calc3Btn.addEventListener('click', multiplyCalc);
+calc4Btn.addEventListener('click', dividedCalc);
+calc5Btn.addEventListener('click', remainderCalc);
