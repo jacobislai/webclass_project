@@ -110,3 +110,12 @@ calc2Btn.addEventListener('click', substructCalc);
 calc3Btn.addEventListener('click', multiplyCalc);
 calc4Btn.addEventListener('click', dividedCalc);
 calc5Btn.addEventListener('click', remainderCalc);
+
+//NEXT 將計算方式改成下拉選單
+const runCalc = () => {
+    let type = typeSelect.value;
+    if (type == '+') {
+        addCalc();
+    }
+}
+typeSelect.addEventListener('change', runCalc);
