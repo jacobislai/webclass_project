@@ -24,20 +24,57 @@ let n2 = 100;
 let m1 = 10;
 let m2 = '10';
 
-console.log(`m1: ${m1} type is ${typeof m1}, m2: ${m2} type is ${typeof m2}`)
+// console.log(`m1: ${m1} type is ${typeof m1}, m2: ${m2} type is ${typeof m2}`)
 
-console.log('use == is: ');
+// console.log('use == is: ');
 
-if (m1 == m2) {
-    console.log('equal');
-} else {
-    console.log('diff');
+// if (m1 == m2) {
+//     console.log('equal');
+// } else {
+//     console.log('diff');
+// }
+
+// console.log('use === is: ');
+
+// if (m1 === m2) {
+//     console.log('equal');
+// } else {
+//     console.log('diff');
+// }
+
+let g1 = 10;
+let g2 = 10;
+
+// if (g1 > g2) {
+//     console.log('large!');
+// } else {
+//     console.log('no');
+// }
+
+
+// if (g1 >= g2) {
+//     console.log('large!');
+// } else {
+//     console.log('no');
+// }
+
+let student = {
+    name: 'David',
+    s1: 50,
+    s2: 100
 }
 
-console.log('use === is: ');
+// david 所有科目都及格嗎?
 
-if (m1 === m2) {
-    console.log('equal');
+
+/**
+ * 1. student.s1 >= 60 => boolA
+ * 2. student.s2 >= 60 => boolB
+ * 3. boolA && boolB => boolC
+ * 4. if (boolC) {}
+ */
+if (student.s1 >= 60 && student.s2 >= 60) {
+    console.log(`${student.name} all pass.`);
 } else {
-    console.log('diff');
+    console.log(`${student.name} not pass.`);
 }
