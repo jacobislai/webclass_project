@@ -60,7 +60,7 @@ let g2 = 10;
 
 let student = {
     name: 'David',
-    s1: 50,
+    s1: 60,
     s2: 100
 }
 
@@ -73,8 +73,28 @@ let student = {
  * 3. boolA && boolB => boolC
  * 4. if (boolC) {}
  */
-if (student.s1 >= 60 && student.s2 >= 60) {
-    console.log(`${student.name} all pass.`);
-} else {
-    console.log(`${student.name} not pass.`);
-}
+// if (student.s1 >= 60 && student.s2 >= 60) {
+//     console.log(`${student.name} all pass.`);
+// } else {
+//     console.log(`${student.name} not pass.`);
+// }
+
+// // david 是否有科目不及格?
+
+// if (student.s1 < 60 || student.s2 < 60) {
+//     console.log('yes');
+// } else {
+//     console.log('all pass')
+// }
+
+
+let gogoTrigger = document.querySelector('#gogo-trigger');
+let gogoCheckbox = document.querySelector('#gogo');
+
+
+gogoTrigger.addEventListener('click', () => {
+    let checked = gogoCheckbox.checked;
+    console.log(checked);
+    gogoCheckbox.checked = !checked;
+    console.log(gogoCheckbox.checked);
+})
