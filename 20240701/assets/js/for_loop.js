@@ -1,10 +1,26 @@
 let n1Input = document.querySelector("#n1");
 let n2Input = document.querySelector("#n2");
 let generateBtn = document.querySelector("#generate");
+let responseTable = document.querySelector('#response');
+
+const generateThead = (max) => {
+    let thead = responseTable.querySelector('thead');
+    let theadHTML = '<tr><th>n1 / n2</th>';
+
+    for (let i = 1; i <= max; i++) {
+        theadHTML += `<th>${i}</th>`;
+    }
+
+    theadHTML += '</tr>';
+    thead.innerHTML = theadHTML;
+}
 
 generateBtn.addEventListener('click', () => {
     let n1 = n1Input.value;
     let n2 = n2Input.value;
+
+    generateThead(n2);
+
 
     for (let i = 1; i <= n1; i++) {
         console.log(`current i is: ${i}`)
