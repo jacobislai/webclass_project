@@ -114,7 +114,6 @@ calc4Btn.addEventListener('click', dividedCalc);
 calc5Btn.addEventListener('click', remainderCalc);
 
 const typeIfSolution = (type) => {
-
     if (type == '+') {
         addCalc();
     }
@@ -139,19 +138,44 @@ const typeIfSolution = (type) => {
 const typeSwitchSolution = (type) => {
     switch (type) {
         case '+':
-            console.log('+++++');
+            addCalc();
             break;
         case '-':
-            console.log('-----');
+            substructCalc();
+            break;
+        case '*':
+            multiplyCalc();
+            break;
+        case '/':
+            dividedCalc();
+            break;
+        case '%':
+            remainderCalc();
             break;
         default:
             console.log('not match.');
     }
 }
 
+const typeHashSolution = (type) => {
+    let hash = {
+        '+': addCalc,
+        '-': substructCalc,
+        '*': multiplyCalc,
+        '/': dividedCalc,
+        '%': remainderCalc,
+    };
+
+    let calc = hash[type];
+    if (calc) {
+        calc();
+    }
+}
+
 const runCalc = () => {
     let type = typeSelect.value;
     // typeIfSolution(type);
-    typeSwitchSolution(type);
+    // typeSwitchSolution(type);
+    typeHashSolution(type);
 }
 typeSelect.addEventListener('change', runCalc);
