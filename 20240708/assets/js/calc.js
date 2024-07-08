@@ -132,5 +132,37 @@ reset.addEventListener('click', () => {
 })
 
 run.addEventListener('click', () => {
-    console.log('run');
+    // if (n1 && n2 && op) {
+    //     // something...
+    //     console.log('something...')
+    // }
+
+    if (!n1 || !n2 || !op) {
+        return;
+    }
+
+    let total = 0;
+
+    switch (op) {
+        case '+':
+            total = n1 + n2;
+            break;
+
+        case '-':
+            total = n1 - n2;
+            break;
+
+        case '*':
+            total = n1 * n2;
+            break;
+
+        case '/':
+            total = n1 / n2;
+            break;
+    }
+
+    n1 = total;
+    n2 = 0;
+    op = '';
+    setResult();
 })
