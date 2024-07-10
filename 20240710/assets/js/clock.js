@@ -1,3 +1,7 @@
+/**
+ * 
+ * @returns array
+ */
 const currentTime = () => {
     let d = new Date();
     let hh = d.getHours();
@@ -16,8 +20,15 @@ const currentTime = () => {
         ss = '0' + ss;
     }
 
-    console.log(hh, mm, ss)
-    // reutrn [hh:mm:ss]
+    let time = `${hh}:${mm}:${ss}`
+    let max = time.length
+    //string is array
+    let arr = [];
+    for (let i = 0; i < max; i++) {
+        arr.push(time[i])
+    }
+    return arr;
+    // reutrn time.split('');
 
     /**
      * hh = 12
@@ -28,7 +39,18 @@ const currentTime = () => {
      */
 }
 
-setInterval(() => {
+const updateTime = () => {
     let times = currentTime();
-    //times update to html.
+    let items = document.querySelectorAll('.clock-wrap > div');
+    times.forEach((num, index) => {
+        if (items[index]) {
+            items[index].innerHTML = num;
+        }
+    })
+}
+
+setInterval(() => {
+    updateTime();
 }, 1000)
+
+updateTime();
