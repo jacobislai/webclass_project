@@ -52,6 +52,28 @@ class TodoApp {
 
         localStorage.setItem('todo-app-uid', uid)
         TodoStorage.setUid(uid);
+
+        let currentUid = document.querySelector('#current-uid');
+        currentUid.innerHTML = uid;
+
+        let auth = document.querySelector('#is-auth');
+        auth.classList.add('authed');
+
+        currentUid.addEventListener('click', async (e) => {
+            e.preventDefault();
+            let result = await Swal.fire({
+                title: '確定更換 UID?',
+                icon: 'question',
+                showCancelButton: true,
+                cancelButtonText: '等等',
+                confirmButtonText: '確定'
+            })
+
+            if (result.isConfirmed) {
+                localStorage.setItem('todo-app-uid', '')
+                this.init();
+            }
+        })
     }
 }
 
