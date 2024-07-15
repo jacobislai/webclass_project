@@ -1,3 +1,6 @@
+import { TodoStorage } from "./TodoStorage.js";
+
+
 let itemName = document.querySelector('#item-name');
 let addBtn = document.querySelector('#add-btn');
 let todo = document.querySelector('#todo-item');
@@ -62,13 +65,25 @@ addBtn.addEventListener('click', async () => {
 });
 
 const save = (data) => {
-    localStorage.setItem('todo-app', data);
+    TodoStorage.write(data);
+    //localStorage.setItem('todo-app', data);
 }
 
 const restore = () => {
-    let data = localStorage.getItem('todo-app');
+    //let data = localStorage.getItem('todo-app');
+    let data = TodoStorage.read();
     todo.innerHTML = data;
 }
 
 
 restore();
+
+let todoItem = {
+    name: '',
+    id: '',
+    checked: false
+}
+
+let todos = [];
+
+todos.push(todoItem);
