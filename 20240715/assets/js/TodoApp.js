@@ -1,5 +1,6 @@
 import { TodoStorage } from "./TodoStorage.js";
 
+let uid = '';
 let data = [];
 
 class TodoApp {
@@ -32,6 +33,25 @@ class TodoApp {
                 </li>`
         })
         return html;
+    }
+
+    static async init() {
+        uid = localStorage.getItem('todo-app-uid');
+        if (!uid) {
+            let result = await Swal.fire({
+                title: '輸入 UID',
+                input: 'text'
+            })
+            if (!result.value) {
+                this.init()
+                return;
+            }
+
+            uid = result.value;
+        }
+
+        localStorage.setItem('todo-app-uid', uid)
+        TodoStorage.setUid(uid);
     }
 }
 

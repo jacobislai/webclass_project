@@ -1,5 +1,7 @@
 import { TodoApp } from "./TodoApp.js";
 
+TodoApp.init();
+
 let itemName = document.querySelector('#item-name');
 let addBtn = document.querySelector('#add-btn');
 let todo = document.querySelector('#todo-item');

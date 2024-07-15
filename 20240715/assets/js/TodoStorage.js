@@ -1,9 +1,9 @@
-const key = 'todo-app';
+let uid = '';
 
 class TodoStorage {
     static write(data) {
         data = JSON.stringify(data);
-        localStorage.setItem(key, data)
+        localStorage.setItem(this.key(), data)
     }
 
     /**
@@ -11,11 +11,19 @@ class TodoStorage {
      * @returns array
      */
     static read() {
-        let str = localStorage.getItem(key);
+        let str = localStorage.getItem(this.key());
         if (str) {
             return JSON.parse(str);
         }
         return [];
+    }
+
+    static key() {
+        return `todo-app-${uid}`
+    }
+
+    static setUid(str) {
+        uid = str
     }
 }
 
