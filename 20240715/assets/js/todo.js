@@ -1,11 +1,12 @@
 import { TodoApp } from "./TodoApp.js";
 
-TodoApp.init();
+
 
 let itemName = document.querySelector('#item-name');
 let addBtn = document.querySelector('#add-btn');
 let todo = document.querySelector('#todo-item');
 
+TodoApp.init(todo);
 const generateId = () => {
     return Math.floor(Math.random() * 1000);
 }
@@ -41,11 +42,6 @@ todo.addEventListener('click', (e) => {
         TodoApp.setChecked(index, checked);
     }
 })
-
-TodoApp.restore();
-
-let html = TodoApp.html();
-todo.innerHTML = html;
 
 
 

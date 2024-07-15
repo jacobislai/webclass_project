@@ -2,6 +2,7 @@ import { TodoStorage } from "./TodoStorage.js";
 
 let uid = '';
 let data = [];
+let _app = '';
 
 class TodoApp {
     static add(id, name, checked = false) {
@@ -35,23 +36,14 @@ class TodoApp {
         return html;
     }
 
-    static async init() {
-        uid = localStorage.getItem('todo-app-uid');
-        if (!uid) {
-            let result = await Swal.fire({
-                title: '輸入 UID',
-                input: 'text'
-            })
-            if (!result.value) {
-                this.init()
-                return;
-            }
+    static async init(app) {
+        _app = app;
+        await this.initUID();
+        this.restore();
 
-            uid = result.value;
-        }
+        let html = this.html();
+        _app.innerHTML = html;
 
-        localStorage.setItem('todo-app-uid', uid)
-        TodoStorage.setUid(uid);
 
         let currentUid = document.querySelector('#current-uid');
         currentUid.innerHTML = uid;
@@ -74,6 +66,23 @@ class TodoApp {
                 this.init();
             }
         })
+    }
+
+    static async initUID() {
+        uid = localStorage.getItem('todo-app-uid');
+        while (!uid) {
+            let result = await Swal.fire({
+                title: '輸入 UID',
+                input: 'text'
+            })
+
+            if (result.value) {
+                uid = result.value;
+            }
+        }
+
+        localStorage.setItem('todo-app-uid', uid)
+        TodoStorage.setUid(uid);
     }
 }
 
