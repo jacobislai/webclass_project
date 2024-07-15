@@ -17,6 +17,11 @@ class TodoApp {
         data = TodoStorage.read();
     }
 
+    static setChecked(index, checked) {
+        data[index].checked = checked;
+        TodoStorage.write(data);
+    }
+
     static html() {
         let html = '';
         data.forEach((item, index) => {

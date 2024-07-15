@@ -31,11 +31,16 @@ addBtn.addEventListener('click', async () => {
     itemName.focus();
 });
 
-TodoApp.restore();
+todo.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target.tagName == 'INPUT') {
+        let index = target.id.replace('todo-item-', '');
+        let checked = target.checked;
+        TodoApp.setChecked(index, checked);
+    }
+})
 
-// TodoApp.add(123, 'xxx');
-// TodoApp.add(456, 'ooo', true);
-// TodoApp.add(789, 'vvv', false);
+TodoApp.restore();
 
 let html = TodoApp.html();
 todo.innerHTML = html;
