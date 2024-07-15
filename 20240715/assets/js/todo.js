@@ -1,13 +1,41 @@
-import { TodoStorage } from "./TodoStorage.js";
 import { TodoApp } from "./TodoApp.js";
 
 let itemName = document.querySelector('#item-name');
 let addBtn = document.querySelector('#add-btn');
 let todo = document.querySelector('#todo-item');
 
-TodoApp.add(123, 'xxx');
-TodoApp.add(456, 'ooo', true);
-TodoApp.add(789, 'vvv', false);
+const generateId = () => {
+    return Math.floor(Math.random() * 1000);
+}
+
+addBtn.addEventListener('click', async () => {
+    let value = itemName.value;
+    if (!value) {
+        await Swal.fire({
+            title: '新增失敗',
+            html: '尚未輸入項目名稱',
+            icon: 'error'
+        })
+        console.log(123);
+        setTimeout(() => {
+            itemName.focus();
+        }, 500)
+        return;
+    }
+
+    TodoApp.add(generateId(), value);
+    todo.innerHTML = TodoApp.html();
+
+    // 輸入框內容清空
+    itemName.value = '';
+    itemName.focus();
+});
+
+TodoApp.restore();
+
+// TodoApp.add(123, 'xxx');
+// TodoApp.add(456, 'ooo', true);
+// TodoApp.add(789, 'vvv', false);
 
 let html = TodoApp.html();
 todo.innerHTML = html;

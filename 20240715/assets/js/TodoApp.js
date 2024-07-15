@@ -1,4 +1,6 @@
-const data = [];
+import { TodoStorage } from "./TodoStorage.js";
+
+let data = [];
 
 class TodoApp {
     static add(id, name, checked = false) {
@@ -8,7 +10,11 @@ class TodoApp {
             checked: checked
         })
 
-        console.log(data);
+        TodoStorage.write(data);
+    }
+
+    static restore() {
+        data = TodoStorage.read();
     }
 
     static html() {
