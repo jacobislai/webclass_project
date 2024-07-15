@@ -37,6 +37,7 @@ const addItem = (name) => {
 
     let li = strLi(name);
     todo.innerHTML += li;
+    save(todo.innerHTML);
 }
 
 addBtn.addEventListener('click', async () => {
@@ -59,3 +60,15 @@ addBtn.addEventListener('click', async () => {
     itemName.value = '';
     itemName.focus();
 });
+
+const save = (data) => {
+    localStorage.setItem('todo-app', data);
+}
+
+const restore = () => {
+    let data = localStorage.getItem('todo-app');
+    todo.innerHTML = data;
+}
+
+
+restore();
