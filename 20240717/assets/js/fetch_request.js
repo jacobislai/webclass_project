@@ -50,7 +50,7 @@ const previewImage = (file) => {
         reader.onload = () => {
             return resolve(reader.result)
         }
-        reader.readerAsDataURL(file);//base64 encode非加密
+        reader.readAsDataURL(file); // base64 encode 非加密
 
         // encrypt 加密
     })
