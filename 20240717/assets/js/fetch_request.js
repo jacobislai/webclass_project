@@ -1,5 +1,7 @@
 let domSend = document.querySelector('#send');
 let domResponse = document.querySelector('#response');
+let domFile = document.querySelector('#upload-file');
+let domUpload = document.querySelector('#upload');
 
 const doGet = async (url) => {
     let response = await fetch(url);
@@ -21,6 +23,10 @@ const doPost = async (url) => {
     return await response.json();
 }
 
+const doUploadFile = async (url, file) => {
+
+}
+
 domSend.addEventListener('click', async () => {
     console.log('send!');
     // let url = 'https://book.niceinfos.com/frontend/api/?action=sleep&timer=3';
@@ -28,8 +34,28 @@ domSend.addEventListener('click', async () => {
     // console.log(response);
     // domResponse.innerHTML = response.data;
 
-    let url = 'https://book.niceinfos.com/frontend/api/'
-    let response = await doPost(url);
-    console.log(response);
-    domResponse.innerHTML = JSON.stringify(response.data);
+    // let url = 'https://book.niceinfos.com/frontend/api/';
+    // let response = await doPost(url);
+    // console.log(response);
+    // domResponse.innerHTML = JSON.stringify(response.data);
+
+
+
+})
+
+domUpload.addEventListener('click', async () => {
+    let url = 'https://book.niceinfos.com/frontend/api/';
+    let file = domFile.files[0];
+    let type = file.type.split('/');
+    if (type[0] != 'image') {
+        Swal.fire({
+            title: '格式錯誤',
+            html: '只允許圖片類型',
+            icon: 'error'
+        })
+        domFile.value = '';
+        return;
+    }
+
+    console.log(file);
 })
