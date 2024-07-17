@@ -2,6 +2,7 @@ let domSend = document.querySelector('#send');
 let domResponse = document.querySelector('#response');
 let domFile = document.querySelector('#upload-file');
 let domUpload = document.querySelector('#upload');
+let domPreview = document.querySelector('#preview');
 
 const doGet = async (url) => {
     let response = await fetch(url);
@@ -43,9 +44,26 @@ domSend.addEventListener('click', async () => {
 
 })
 
+const previewImage = (file) => {
+    return new Promise((resolve, reject) => {
+        let reader = new FileReader;
+        reader.onload = () => {
+            return resolve(reader.result)
+        }
+        reader.readerAsDataURL(file);//base64 encode非加密
+
+        // encrypt 加密
+    })
+}
+
 domUpload.addEventListener('click', async () => {
     let url = 'https://book.niceinfos.com/frontend/api/';
     let file = domFile.files[0];
+
+    if (!file) {
+        return;
+    }
+
     let type = file.type.split('/');
     if (type[0] != 'image') {
         Swal.fire({
@@ -57,5 +75,19 @@ domUpload.addEventListener('click', async () => {
         return;
     }
 
+    let sizeMB = file.size / 1024 / 1024;
+
+    if (sizeMB > 5) {
+        Swal.fire({
+            title: '圖片太大了',
+            html: '只允許5MB以下圖片',
+            icon: 'error'
+        })
+        return;
+    }
+
     console.log(file);
+    let preview = await previewImage(file);
+    console.log(preview);
+    domPreview.src = preview;
 })
