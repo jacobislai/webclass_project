@@ -49,12 +49,48 @@ let downloadBtn = document.querySelector('#download-btn');
 
 uploadBtn.addEventListener('click', () => {
     console.log('upload data...')
-    console.log(TodoApp.getUid());
+    let uid = TodoApp.getUid();
+    if (!uid) {
+        return;
+    }
+    let api = new TodoAPI(uid);
+    let data = TodoApp.getData();
+    api.write(data);
+    Swal.fire({
+        title: '上傳成功',
+        html: '數據已傳送至雲端',
+        icon: 'success'
+    })
 });
 
-downloadBtn.addEventListener('click', () => {
+downloadBtn.addEventListener('click', async () => {
     console.log('download data...')
-    console.log(TodoApp.getUid());
+    let uid = TodoApp.getUid();
+    if (!uid) {
+        return;
+    }
+
+    let result = await Swal.fire({
+        title: '下載確認?',
+        html: '現有數據將被覆蓋',
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonText: '等等',
+        confirmButtonText: '確定'
+    })
+
+    if (!result.isConfirmed) {
+        return;
+    }
+
+    let api = new TodoAPI(uid);
+    let response = await api.read();
+    TodoApp.setData(response.data);
+    Swal.fire({
+        title: '下載成功',
+        html: '數據已從雲端下載',
+        icon: 'success'
+    })
 });
 
 

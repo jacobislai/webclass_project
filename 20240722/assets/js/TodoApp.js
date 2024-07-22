@@ -24,6 +24,17 @@ class TodoApp {
         TodoStorage.write(data);
     }
 
+    static getData() {
+        return data;
+    }
+
+    static setData(oData) {
+        data = oData
+        let html = this.html();
+        _app.innerHTML = html;
+        TodoStorage.write(data);
+    }
+
     static html() {
         let html = '';
         data.forEach((item, index) => {
